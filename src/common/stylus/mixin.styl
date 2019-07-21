@@ -1,0 +1,32 @@
+border-1px($color)
+  position: relative
+  &:after
+    diplay: block
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    border-top: 1px solid $color
+    content: ' '
+
+border-none()
+   &:afer
+     display: none
+
+
+bg-image($url)
+  background-image: url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")
+
+bg-images($url)
+  &.decrease
+    bg-image('decrease_' + $url)
+  &.discount
+    bg-image('discount_' + $url)
+  &.guarantee
+    bg-image('guarantee_' + $url)
+  &.invoice
+    bg-image('invoice_' + $url)
+  &.special
+    bg-image('special_' + $url)
